@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "prp1210"
 version = "0.1.0"
 description = "A comprehensive Python library for RP1210 and J1939 heavy-duty vehicle communication protocols"
-readme = "README.md"
+readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [
@@ -38,7 +38,10 @@ dev = [
     "isort>=5.10",
     "flake8>=4.0",
     "mypy>=0.950",
+]
+docs = [
     "sphinx>=5.0",
+    "sphinx-rtd-theme>=1.0",
 ]
 
 [project.urls]
@@ -49,9 +52,6 @@ Repository = "https://github.com/lisi12345/prp1210"
 
 [tool.setuptools]
 packages = ["prp1210"]
-
-[tool.setuptools.package-dir]
-"" = "."
 
 [tool.black]
 line-length = 100
