@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools-scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prp1210"
+version = "0.1.0"
+description = "A comprehensive Python library for RP1210 and J1939 heavy-duty vehicle communication protocols"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Lisi Lei", email = "lisil01100@gmail.com"}
+]
+keywords = ["RP1210", "J1939", "heavy-duty", "vehicle", "communication", "protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "msl-loadlib",
+    "python-can",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=22.0",
+    "isort>=5.10",
+    "flake8>=4.0",
+    "mypy>=0.950",
+    "sphinx>=5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/lisi12345/prp1210"
+Documentation = "https://prp1210.readthedocs.io"
+Repository = "https://github.com/lisi12345/prp1210"
+"Bug Tracker" = "https://github.com/lisi12345/prp1210/issues"
+
+[tool.setuptools]
+packages = ["prp1210"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
