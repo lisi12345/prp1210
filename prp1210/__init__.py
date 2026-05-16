@@ -11,7 +11,6 @@ Key modules:
 """
 
 
-
 from .common import RP1210Error, RP1210NotConnected, RP1210Timeout
 from .j1939 import (
     J1939Message,
@@ -21,7 +20,11 @@ from .j1939 import (
     PGNInfo,
     PGNParser,
 )
-from .rp1210 import RP1210Client
+from .rp1210 import (MockRP1210Device, RP1210Client, RP1210Device,
+                     SimulatedRP1210Device)
 
-__all__ = ["RP1210Client", "RP1210Error", "RP1210NotConnected", "RP1210Timeout", "PGNDatabase",
-           "PGNParser", "PGNInfo", "J1939Message", "J1939MessageBuilder", "J1939MessageParser"]
+__all__ = ["RP1210Client", "RP1210Device", "MockRP1210Device",
+           "SimulatedRP1210Device",
+           "RP1210Error", "RP1210NotConnected", "RP1210Timeout",
+           "PGNDatabase", "PGNParser", "PGNInfo", "J1939Message",
+           "J1939MessageBuilder", "J1939MessageParser"]
